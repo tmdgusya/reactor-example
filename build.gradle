@@ -10,6 +10,12 @@ repositories {
 }
 
 dependencies {
+    // https://mvnrepository.com/artifact/io.projectreactor/reactor-core
+    implementation 'io.projectreactor:reactor-core:3.4.21'
+
+    // https://mvnrepository.com/artifact/io.projectreactor/reactor-test
+    testImplementation 'io.projectreactor:reactor-test:3.4.21'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
