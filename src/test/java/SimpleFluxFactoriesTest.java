@@ -36,6 +36,15 @@ public class SimpleFluxFactoriesTest {
         var integer = new AtomicInteger(1);
         var integerFlux = Flux.fromStream(Stream.generate(integer::getAndIncrement));
         StepVerifier.create(integerFlux.take(3)).expectNext(1).expectNext(2).expectNext(3).verifyComplete();
+
+        var flux = Flux.just("A");
+        flux.map(s -> "foo" + s);
+        flux.subscribe(System.out::println);
+
+        Flux
+            .just("A")
+            .map(s -> "foo" + s)
+            .subscribe(System.out::println);
     }
 
 }
